@@ -4,6 +4,9 @@ Neste tutorial iremos criar um projeto MVC em asp.net com Entity Framework e SQL
 
 ## Get started
 
+⚠ Pre requisitos: Visual studio, SDK .NET 7.0.1
+
+
 ### 1º passo:
 
 Para criar o projeto inicialize com o comando no seu terminal:
