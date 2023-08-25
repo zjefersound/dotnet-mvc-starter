@@ -4,7 +4,7 @@ Neste tutorial iremos criar um projeto MVC em asp.net com Entity Framework e SQL
 
 ## Get started
 
-### 1º passo:
+### 1Âº passo:
 
 Para criar o projeto inicialize com o comando no seu terminal:
 
@@ -12,9 +12,9 @@ Para criar o projeto inicialize com o comando no seu terminal:
 dotnet new mvc --no-https --output NomeDoProjeto
 ```
 
-### 2ºpasso:
+### 2Âºpasso:
 
-Adicione as dependências necessárias para o projeto:
+Adicione as dependÃªncias necessÃ¡rias para o projeto:
 
 ```bash
 dotnet add package Microsoft.EntityFrameworkCore --version 7.0.10
@@ -23,7 +23,7 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 7.0.10
 dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 7.0.10
 ```
 
-### 3ºpasso:
+### 3Âºpasso:
 
 Crie seu model:
 
@@ -78,10 +78,9 @@ namespace PjJefersonSouza.Data
 }
 ```
 
-### 4º passo: 
+### 4Âº passo: 
 
-Configure a conexão do banco no ```appsettings.json``` 
-dotnet tool install --global dotnet-ef
+Configure a conexÃ£o do banco no ```appsettings.json``` 
 
 ```json
 {
@@ -92,11 +91,11 @@ dotnet tool install --global dotnet-ef
 }
 ```
 
-### 5º passo:
+### 5Âº passo:
 
 No arquivo ```Program.cs``` defina o DbContext no builder:
 
-````csharp
+```csharp
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PjJefersonSouza.Data;
@@ -110,5 +109,27 @@ builder.Services.AddDbContext<AppDbContext>(options =>
             GetConnectionString("DefaultContext")
     )
 );
-...
+
+```
+
+### 6Âº passo
+
+Para configurar e atualizar o banco:
+
+Instale o Entity Framework tool 
+
+```bash
+dotnet tool install --global dotnet-ef
+```
+
+Crie sua migration inicial:
+
+```bash
+dotnet ef migrations add InitialCreate
+```
+
+Para atualizar o banco:
+
+```bash
+dotnet ef database update
 ```
